@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 // const { MongoClient } = require('mongodb'); connect without use mongoose
 
 const dotenv = require('dotenv'); //ENVIROMENT VARIABLE MAIPULATE
+const job = require('./cron')
+
+if(process.env.NODE_ENV === 'production') job.start()
 
 //!WE SHOULD PUT BEFORE ALL CODE, ESPECIALLY WITH BEFORE APP.JS(ONLY THE DEV MODULES), NOT FOR CORE MODULES AND LIBRARIES MODULES(WHICH SHOULD PUT BEFOR THIS CODE)
 process.on('uncaughtException', err => {
