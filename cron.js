@@ -17,4 +17,4 @@ const job = cron.schedule('*/14 * * * *', function () {
     })
 })
 
-export default job
+module.exports = job
