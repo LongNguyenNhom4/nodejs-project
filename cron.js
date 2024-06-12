@@ -8,7 +8,7 @@ const https = require( 'https')
 const job = cron.schedule('*/14 * * * *', function () {
  console.log('RESTARTING SERVER')
   https
-    .get(`/`, (res) => {
+    .get(`https://natours-twq3.onrender.com`, (res) => {
       if (res.statusCode === 200)  console.log('SERVER RESTARTED')
       else console.error(`FAILED TO RESTART SERVER WITH STATUS CODE: ${res.statusCode}`)
     })
